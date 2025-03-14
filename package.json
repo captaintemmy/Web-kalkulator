@@ -1,0 +1,17 @@
+{
+  "name": "web-kalkulator",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test",
+    "dev": "nodemon index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "web-kalkulator"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
