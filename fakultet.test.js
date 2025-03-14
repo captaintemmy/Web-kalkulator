@@ -20,3 +20,4 @@ test('fakultet av 2 er 2', () => {
 test('fakultet av 3 er 6', () => {
     assert.strictEqual(fakultet(3), 6);
 })
+
