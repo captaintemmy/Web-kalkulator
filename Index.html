@@ -1,118 +1,117 @@
 <!doctype html>
 <html>
-    <head>
-    </head>
-    <body>
 
-        <div id="fakultet">
-            <form>
-                <input name="tall" placeholder="Tall" type="number">
-                <button>Regn ut fakultet</button>
-            </form>
-            <p>
-                Resultatet er: <span class="resultat"></span>
-            </p>
-        </div>
+<head>
+    <adress>Cum</adress>
+</head>
+<body>
 
-        <script type="module">
+    <div id="fakultet">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut fakultet</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
 
-        import {fakultet} from './fakultet.js'
+    <script type="module">
 
-    function regnUt(evt) {
-    // For å forhindre at nettleseren sender skjemaet:
-    evt.preventDefault()
+        import { fakultet } from './fakultet.js'
+        import { fizzBuzz } from './fizzbuzz.js'
+        import { fibonacci } from './fibonacci.js'
 
-    // Vi bruker querySelector for å finne elementene vi trenger:
-    // "#fakultet input" betyr "input-felt i elementet med id 'fakultet'
-    // "#fakultet .resultat" betyr "element med class 'resultat' i
-    //    elementet som har id 'fakultet'
-    const input = document.querySelector('#fakultet input')
-    const output = document.querySelector('#fakultet .resultat')
+        // Dette er fakultet og stuff
+        function regnUt(evt) {
+            // For å forhindre at nettleseren sender skjemaet:
+            evt.preventDefault()
 
-    // parseInt konverterer en streng til et heltall
-    const tall = parseInt(input.value)
+            // Vi bruker querySelector for å finne elementene vi trenger:
+            // "#fakultet input" betyr "input-felt i elementet med id 'fakultet'
+            // "#fakultet .resultat" betyr "element med class 'resultat' i
+            //    elementet som har id 'fakultet'
+            const input = document.querySelector('#fakultet input')
+            const output = document.querySelector('#fakultet .resultat')
 
-    output.textContent = fakultet(tall)
-    }
+            // parseInt konverterer en streng til et heltall
+            const tall = parseInt(input.value)
 
-// Vi legger til en "event listener" som kjører regnUt-funksjonen når
-// vi trykker på en knapp (button) i elementet med id 'fakultet'
-    document.querySelector('#fakultet button')
-        .addEventListener('click', e => regnUt(e))
+            output.textContent = fakultet(tall)
+        }
+
+        // Vi legger til en "event listener" som kjører regnUt-funksjonen når
+        // vi trykker på en knapp (button) i elementet med id 'fakultet'
+        document.querySelector('#fakultet button')
+            .addEventListener('click', e => regnUt(e))
+
+        //Dette er fibonachi og stuff
+
+        function regnUtFibonacci(evt) {
+            // For å forhindre at nettleseren sender skjemaet:
+            evt.preventDefault()
+
+
+            const input = document.querySelector('#fibonacci input')
+            const output = document.querySelector('#fibonacci .resultat')
+
+            // parseInt konverterer en streng til et heltall
+            const tall = parseInt(input.value)
+
+            output.textContent = fibonacci(tall)
+        }
+
+
+        document.querySelector('#fibonacci button')
+            .addEventListener('click', e => regnUtFibonacci(e))
+
+        //dette er fizzbuzz og stuff
+
+
+        function regnUtFB(evt) {
+            // For å forhindre at nettleseren sender skjemaet:
+            evt.preventDefault()
+
+            // Vi bruker querySelector for å finne elementene vi trenger:
+            // "#fakultet input" betyr "input-felt i elementet med id 'fakultet'
+            // "#fakultet .resultat" betyr "element med class 'resultat' i
+            //    elementet som har id 'fakultet'
+            const input = document.querySelector('#fizzBuzz input')
+            const output = document.querySelector('#fizzBuzz .resultat')
+
+            // parseInt konverterer en streng til et heltall
+            const tall = parseInt(input.value)
+
+            output.textContent = fizzBuzz(tall)
+        }
+
+        // Vi legger til en "event listener" som kjører regnUt-funksjonen når
+        // vi trykker på en knapp (button) i elementet med id 'fakultet'
+        document.querySelector('#fizzBuzz button')
+            .addEventListener('click', e => regnUtFB(e))
+
     </script>
 
-<div id="fizzBuzz">
-    <form>
-        <input name="tall" placeholder="Tall" type="number">
-        <button>Regn ut fizzBuzz</button>
-    </form>
-    <p>
-        Resultatet er: <span class="resultat"></span>
-    </p>
-</div>
+    <div id="fizzBuzz">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut fizzBuzz</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
 
-<script type="module">
+    <div id="fibonacci">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut fibonacci</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
 
-    import {fizzBuzz} from './fizzbuzz.js'
+</body>
 
-function regnUtFB(evt) {
-// For å forhindre at nettleseren sender skjemaet:
-evt.preventDefault()
-
-// Vi bruker querySelector for å finne elementene vi trenger:
-// "#fakultet input" betyr "input-felt i elementet med id 'fakultet'
-// "#fakultet .resultat" betyr "element med class 'resultat' i
-//    elementet som har id 'fakultet'
-const input = document.querySelector('#fizzBuzz input')
-const output = document.querySelector('#fizzBuzz .resultat')
-
-// parseInt konverterer en streng til et heltall
-const tall = parseInt(input.value)
-
-output.textContent = fizzBuzz(tall)
-}
-
-// Vi legger til en "event listener" som kjører regnUt-funksjonen når
-// vi trykker på en knapp (button) i elementet med id 'fakultet'
-document.querySelector('#fizzBuzz button')
-    .addEventListener('click', e => regnUtFB(e))
-</script>
-
-
-<div id="fibonacci">
-    <form>
-        <input name="tall" placeholder="Tall" type="number">
-        <button>Regn ut fibonacci</button>
-    </form>
-    <p>
-        Resultatet er: <span class="resultat"></span>
-    </p>
-</div>
-
-<script type="module">
-
-    import {fibonacci} from './fibonacci.js'
-
-function regnUtFibonacci(evt) {
-// For å forhindre at nettleseren sender skjemaet:
-evt.preventDefault()
-
-
-const input = document.querySelector('#fibonacci input')
-const output = document.querySelector('#fibonacci .resultat')
-
-// parseInt konverterer en streng til et heltall
-const tall = parseInt(input.value)
-
-output.textContent = fibonacci(tall)
-}
-
-
-document.querySelector('#fibonacci button')
-    .addEventListener('click', e => regnUtFibonacci(e))
-</script>
-
-
-
-    </body>
 </html>

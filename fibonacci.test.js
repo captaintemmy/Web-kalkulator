@@ -14,7 +14,6 @@ test('fibonacci av 3 er 2', () => {
 test('fibonacci av 5 er 5', () => {
     assert.strictEqual(fibonacci(5), 5);
 })
-
 test('fibonacci av 10 er 55', () => {
     assert.strictEqual(fibonacci(10), 55);
 })
